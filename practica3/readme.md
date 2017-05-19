@@ -1,7 +1,7 @@
-#Práctica 3
+# Práctica 3
 ====================
 
-##Nginx
+## Nginx
 
 Para esta práctica hemos creado una nueva máquina virtual, en la cual no hemos instalado Apache, así como se pedía en la práctica, para tener el puerto 80 libre.
 Una vez creada esta máquina hemos instalado nginx.
@@ -35,7 +35,7 @@ Con ip_hash podemos hacer un balanceo por IP,  de esta forma podemos hacer que t
 Con keepalive podemos utilizar conexiones entre nginx y los servidores finales, de forma que se realice una conexión con una presistencia de múltiples pretiones HTTP en lugar de abrir cada vez una nueva conexión.
 <img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/configNginx4.PNG">
 
-##Haproxy
+## Haproxy
 
 Ahora vamos a instalar el balanceador haproxy, lo vamos a instalar en la misma máquina que nginx, por eso antes de nada tenemos que para el servicio de nginx y después instalar haproxy.
 ```shell
