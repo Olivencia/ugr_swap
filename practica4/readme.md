@@ -1,7 +1,7 @@
-#Práctica 4
+# Práctica 4
 ====================
 
-##Certificado SSL
+## Certificado SSL
 
 En esta práctica vamos a instalar un certificado SSL autofirmado en nuestros servidores web, para ello ejecutamos los siguientes comandos:
 a2enmod ssl
@@ -10,7 +10,7 @@ service apache2 restart
 mkdir /etc/apache2/ssl
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 ```
-###Instalación de SSL:
+### Instalación de SSL:
 <img src="https://github.com/Olivencia/ugr_swad/blob/master/practica4/img/instalacionSSLM1.PNG">
 
 Después editamos el siguiente archivo: 
@@ -22,7 +22,7 @@ Y añadimos las siguientes líneas debajo de donde pone SSLEngine on:
 SSLCertificateFile /etc/apache2/ssl/apache.crt
 SSLCertificateKeyFile /etc/apache2/ssl/apache.key
 ```
-###Configuración de SSL:
+### Configuración de SSL:
 <img src="https://github.com/Olivencia/ugr_swad/blob/master/practica4/img/configSSLM1.PNG">
 
 Y finalmente reiniciamos apache:
@@ -34,7 +34,7 @@ Una vez que hemos reiniciado el servicio accedemos al servidor web mediante el p
 
 <img src="https://github.com/Olivencia/ugr_swad/blob/master/practica4/img/pruebaSSL.PNG">
 
-###Configuración del cortafuegos:
+## Configuración del cortafuegos:
 Lo que vamos a hacer es crear un script, donde configuramos el cortafuegos iptables:
 <img src="https://github.com/Olivencia/ugr_swad/blob/master/practica4/img/configCorta.PNG">
 
