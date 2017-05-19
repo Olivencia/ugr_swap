@@ -14,7 +14,7 @@ sudo systemctl start nginx
 Ahora lo que tenemos que hacer es cambiar la configuración de nginx, vamos a usar un algoritmo round-robin para gestionar las peticiones. En un principio todas van a tener la misma prioridad.
 
 Configuración de nginx:
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/configNginx.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/configNginx.PNG">
 
 Reiniciamos el servicio
 ```shell
@@ -22,18 +22,18 @@ sudo systemctl restart nginx
 ```
 Podemos ver su funcionamiento desde una cuarta máquina, en la cual solo hace falta que tengamos instalado Curl
 Prueba de nginx:
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/pruebaNginx.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/pruebaNginx.PNG">
 
 También podemos hacer varias configuraciones en el archivo de configuación de nginx como por ejemplo:
 
 Con weight podemos asignar más prioridad a una de las máquinas:
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/configNginx2.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/configNginx2.PNG">
 
 Con ip_hash podemos hacer un balanceo por IP,  de esta forma podemos hacer que todo el tráfico que sea de la misma IP este siempre en la misma máquina y el balanceador no haga ningun cambio de máquina:
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/configNginx3.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/configNginx3.PNG">
 
 Con keepalive podemos utilizar conexiones entre nginx y los servidores finales, de forma que se realice una conexión con una presistencia de múltiples pretiones HTTP en lugar de abrir cada vez una nueva conexión.
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/configNginx4.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/configNginx4.PNG">
 
 ## Haproxy
 
@@ -52,7 +52,7 @@ sudo nano haproxy.cfg
 ```
 Configuración de haproxy:
 
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/pruebaHaproxy.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/pruebaHaproxy.PNG">
 
 Una vez configurado haproxy lo lanzamos:
 ```shell
@@ -62,7 +62,7 @@ Como hicimos antes comprobamos el funcionamiento de haproxy con Curl:
 
 Prueba de haproxy:
 
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/pruebaHaproxy.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/pruebaHaproxy.PNG">
 
 Someter a una alta carga el servidor balanceado
 
@@ -72,11 +72,11 @@ ab -n 1000 -c 10 http://192.168.182.136/index.html
 ```
 Benchmark de nginx:
 
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/testNginx.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/testNginx.PNG">
 
 Benchmark de haproxy:
 
-<img src="https://github.com/Olivencia/ugr_swad/blob/master/practica3/img/testHaproxi.PNG">
+<img src="https://github.com/Olivencia/ugr_swap/blob/master/practica3/img/testHaproxi.PNG">
 
 
 
