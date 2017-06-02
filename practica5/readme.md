@@ -11,6 +11,7 @@ Enter password:
 ```
 
 Una vez dentro vamos a crear una base de datos llamada "contactos", que tendrá una tabla "datos". Ésta contiene dos variables, nombre de tipo char y tlf de tipo entero. Con todo esto ya podemos insertar tuplas en la base de datos:
+
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica5/img/mysql-creacionDB-tabla.PNG">
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica5/img/mysql-muestraTuplas.PNG">
 
@@ -30,7 +31,7 @@ Utilizaremos la opción "-e" para usar las sentencias mySQL desde el propio shel
 ## Restauración de backup de BD en otra máquina
 Para restaurar una BD de un archivo ".sql" en la segunda máquina podemos utilizar SCP para conectarnos a la primera y descargar dicho archivo. Nos pedirá la contraseña del usuario al que nos conectamos y a continuación se descargará.
 
-Para poder importar correctamente la base de datos es necesario tener la base de datos creada en la segunda máquina y después con mysql volcamos los datos en ellas. Si nos fijamos es igual que exportar salvo por el signo "<" en lugar de ">" (indica la dirección donde se realizará el backup, si a una base de datos o a un archivo).
+Para poder importar correctamente la base de datos es necesario tener la base de datos creada en la segunda máquina y después con mysql volcamos los datos en ella. Si nos fijamos es igual que exportar salvo por el signo "<" en lugar de ">" (indica la dirección donde se realizará el backup, si a una base de datos o a un archivo).
 
 Terminada la restauración deberá aparecer un mensaje como el siguiente:
 
