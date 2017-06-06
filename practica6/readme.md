@@ -24,7 +24,7 @@ Creamos una carpeta en la que montamos */dev/md0* y comprobamos que la operació
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-mount.PNG">
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-check.PNG">
 
-Ahora tenemos que editar el archivo */etc/fstab* para que se monte el dispositivo RAID cada vez que se arranca el sistema. Para ello lo renombraremos media su UUID:
+Ahora tenemos que editar el archivo */etc/fstab* para que se monte el dispositivo RAID cada vez que se arranca el sistema. Para ello lo renombraremos mediante su UUID:
 
 ```shell
 ls -l /dev/disk/by-uuid/
@@ -37,7 +37,7 @@ Cogemos la ID correspondiente a */md0* (en este caso) y añadimos la siguiente l
 
 ### Funcionamiento del RAID 1
 
-Hemos simulado un fallo al disco que se encuentra en */dev/sdb* y podemos ver con *mdadm* que ocurre con el RAID donde avisa de que ha habido un fallo en el disco:
+Hemos simulado un fallo en el disco que se encuentra en */dev/sdb* y podemos ver con *mdadm* que ocurre con el RAID. Efectivamente nos avisa de que hay un fallo en uno de los discos:
 
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-failure.PNG">
 
@@ -54,7 +54,7 @@ Vamos a crear otro archivo diferente y luego montamos el disco que se había ext
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-add.PNG">
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-working.PNG">
 
-Por último como el último archivo creado, *file.txt*, ha sido creado sólo cuando estaba funcionando el disco */dev/sdc*, ahora se va a eliminar este. De esta forma también verificaremos que el RAID 1 está funcionando correctamente:
+Por último como el último archivo creado, *file.txt*, ha sido creado sólo cuando estaba funcionando el disco */dev/sdc*, ahora se va a eliminar este para dejar funcionando solo el */dev/sdb*. Si todo va bien debería mostrar la información del archivo sin ningún problema:
 
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-remove2.PNG">
 <img src="https://github.com/Olivencia/ugr_swap/blob/master/practica6/img/raid-detail2.PNG">
